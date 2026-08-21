@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="description" id="meta-description" content="Be among the first to experience MaVie — label scanner, habit tracker, wellbeing journal. Beta includes all premium features." />
+  <meta name="theme-color" content="#FFF7F9" />
+  <title id="doc-title">MaVie — Beta testing</title>
+
+  <meta property="og:title" id="og-title" content="MaVie | Exclusive Beta Access" />
+  <meta property="og:description" id="og-description" content="Beta day is approaching. Secure one of the last spots — details arrive by email when it’s time." />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" id="og-locale" content="en_US" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitter-title" content="MaVie | Exclusive Beta Access" />
+  <meta name="twitter:description" id="twitter-description" content="Beta day is approaching. Secure one of the last spots — details arrive by email when it’s time." />
+  <meta name="twitter:image" content="assets/images/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <!-- Language switcher — top right -->
+  <div class="lang-switch" id="lang-switch">
+    <button
+      type="button"
+      class="lang-switch__btn"
+      id="lang-btn"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-controls="lang-menu"
+      data-i18n-aria="langAria"
+      aria-label="Choose language"
+    >
+      <span class="lang-switch__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.5 2.8 3.8 5.8 3.8 9s-1.3 6.2-3.8 9c-2.5-2.8-3.8-5.8-3.8-9S9.5 5.8 12 3z" />
+        </svg>
+      </span>
+      <span class="lang-switch__code" id="lang-code">EN</span>
+    </button>
+    <ul class="lang-switch__menu" id="lang-menu" role="listbox" hidden>
+      <li role="option" tabindex="0" data-lang="en" aria-selected="true">English</li>
+      <li role="option" tabindex="0" data-lang="sl" aria-selected="false">Slovenščina</li>
+      <li role="option" tabindex="0" data-lang="it" aria-selected="false">Italiano</li>
+      <li role="option" tabindex="0" data-lang="de" aria-selected="false">Deutsch</li>
+    </ul>
+  </div>
+
+  <main class="shell">
+    <header class="header">
+      <div class="brand">
+        <img
+          src="images/MAVIE.png"
+          alt="MaVie"
+          class="logo-img"
+          width="220"
+          height="70"
+          decoding="async"
+        />
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="badge" data-i18n="badge">Beta testing · a few spots left</span>
+      <h1 id="hero-title" data-i18n="heroTitle">Be among the first to experience MaVie.</h1>
+      <p class="hero-text" data-i18n="heroText">
+        MaVie is unlike anything you’ve seen — complete support for nutrition, habits and wellbeing: a label scanner, a flower habit tracker and a wellbeing journal. In beta, you also get every premium feature.
+      </p>
+      <p class="steps" data-i18n-aria="stepsAria" data-i18n-html="stepsHtml" aria-label="What happens after you sign up">
+        Sign up <span aria-hidden="true">→</span>
+        get an email <span aria-hidden="true">→</span>
+        try premium.
+      </p>
+    </section>
+
+    <section class="signup" id="signup-section" aria-labelledby="signup-title">
+      <div class="signup__panel">
+        <div class="signup__intro">
+          <p class="signup__eyebrow" data-i18n="signupEyebrow">Next step</p>
+          <h2 id="signup-title" data-i18n="signupTitle">Join the beta</h2>
+
+          <div class="seats-live" role="status" aria-live="polite">
+            <span class="seats-live__dot" aria-hidden="true"></span>
+            <p class="seats-live__label">
+              <span class="seats-live__eyebrow" data-i18n="liveEyebrow">Updating live</span>
+              <strong id="seats-live-text">Secure one of the last spots.</strong>
+            </p>
+          </div>
+        </div>
+
+        <form
+          id="beta-form"
+          class="form"
+          action="https://formspree.io/f/mbgrlgya"
+          method="POST"
+          novalidate
+        >
+          <input type="hidden" name="_subject" id="form-subject" value="New MaVie Beta signup" />
+          <input type="hidden" name="language" id="form-language" value="English" />
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="field">
+            <label for="name" data-i18n="labelName">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              data-i18n-placeholder="placeholderName"
+              placeholder="Your name"
+              autocomplete="given-name"
+            />
+          </div>
+
+          <div class="field">
+            <label for="email">
+              <span data-i18n="labelEmail">Email address</span>
+              <span class="required">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              data-i18n-placeholder="placeholderEmail"
+              placeholder="you@email.com"
+              autocomplete="email"
+              inputmode="email"
+              required
+            />
+            <p class="field-error" id="email-error" data-i18n="emailError" hidden>
+              Please enter a valid email address 🌸
+            </p>
+          </div>
+
+          <label class="consent" for="consent">
+            <input type="checkbox" id="consent" name="consent" value="yes" required />
+            <span class="consent__text">
+              <span data-i18n="consentBefore">I agree to receive news and updates about MaVie by email. I can unsubscribe at any time. I accept the </span>
+              <button type="button" class="linkish" id="open-privacy" data-open-privacy data-i18n="privacyLink">
+                Privacy Policy
+              </button><span data-i18n="consentAfter">.</span>
+            </span>
+          </label>
+          <p class="field-error" id="consent-error" data-i18n="consentError" hidden>
+            Please confirm you agree to receive updates 🌸
+          </p>
+
+          <button type="submit" class="btn btn--primary" id="submit-btn">
+            <span class="btn__label" data-i18n="submitLabel">I want to join the beta 🌸</span>
+            <span class="btn__loading" aria-hidden="true">
+              <span class="spinner"></span>
+              <span data-i18n="submitLoading">Sending...</span>
+            </span>
+          </button>
+
+          <p class="form-error" id="form-error" hidden role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="confirm" id="confirm-section" hidden aria-live="polite">
+      <div class="confirm__inner">
+        <p class="confirm__mark" aria-hidden="true">🌸</p>
+        <h2 class="confirm__title" id="confirm-title" data-i18n="confirmFreshTitle">
+          Congratulations! You’ve secured one of the last spots.
+        </h2>
+        <p class="confirm__text" id="confirm-text" data-i18n="confirmFreshText">
+          Thank you for joining us. When beta begins, we’ll email you every detail. In the meantime, follow MaVie on Instagram.
+        </p>
+        <a
+          class="btn btn--secondary"
+          href="https://instagram.com/themavieapp"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="instagramCta"
+        >
+          Follow MaVie on Instagram (@themavieapp)
+        </a>
+        <p class="signup-mantra signup-mantra--confirm" data-i18n="mantra">If you’re with MaVie, MaVie is with you.</p>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee-track">
+        <span data-i18n="mantra">If you’re with MaVie, MaVie is with you.</span>
+        <span data-i18n="mantra">If you’re with MaVie, MaVie is with you.</span>
+        <span data-i18n="mantra">If you’re with MaVie, MaVie is with you.</span>
+        <span data-i18n="mantra">If you’re with MaVie, MaVie is with you.</span>
+        <span data-i18n="mantra">If you’re with MaVie, MaVie is with you.</span>
+        <span data-i18n="mantra">If you’re with MaVie, MaVie is with you.</span>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p data-i18n="footerCopy">© MaVie. All rights reserved.</p>
+      <button type="button" class="linkish footer__privacy" id="open-privacy-footer" data-open-privacy data-i18n="footerPrivacy">
+        Privacy Policy
+      </button>
+    </footer>
+  </main>
+
+  <div class="modal" id="privacy-modal" hidden>
+    <div class="modal__backdrop" data-close-privacy tabindex="-1"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+      <button type="button" class="modal__close" id="close-privacy" data-close-privacy data-i18n-aria="closeAria" aria-label="Close">
+        ×
+      </button>
+      <div class="modal__body">
+        <h2 id="privacy-title" data-i18n="privacyTitle">Privacy Policy</h2>
+        <p class="modal__meta" data-i18n="privacyMeta">Last updated: 6 August 2026</p>
+        <div id="privacy-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
