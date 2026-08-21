@@ -3,11 +3,12 @@
 Production-ready link-in-bio / landing page za zbiranje prijav na MaVie beta testiranje.
 Statična stran (HTML + CSS + JS).
 
-## Status — vse shranjeno lokalno
+## Status — shranjeno
 
-**Lokacija:** `D:\MaVie_Projekti\beta testiranje`
+**Lokalno (disk):** `D:\MaVie_Projekti\beta testiranje`  
+**GitHub:** https://github.com/Themavieapp/mavie-beta-landing  
 
-Lahko ugasneš računalnik; koda ostane na disku.
+Lahko ugasneš računalnik / odstraniš zunanji disk — kopija je na GitHubu.
 
 ### Že urejeno
 
