@@ -267,6 +267,7 @@ function showConfirmation(mode, { skipScroll = false } = {}) {
 
   signupSection.hidden = true;
   confirmSection.hidden = false;
+  confirmSection.classList.add("is-revealed");
 
   if (!returning && !skipScroll) {
     confirmSection.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -452,11 +453,45 @@ consentInput.addEventListener("change", () => {
   if (!consentError.hidden) clearConsentError();
 });
 
+/* ---------- Scroll reveal (visual only) ---------- */
+
+function initScrollReveal() {
+  const els = document.querySelectorAll("[data-reveal]");
+  if (!els.length) return;
+
+  const reveal = (el) => el.classList.add("is-revealed");
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    els.forEach(reveal);
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    els.forEach(reveal);
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          reveal(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+  );
+
+  els.forEach((el) => io.observe(el));
+}
+
 /* ---------- Boot ---------- */
 
 initPrivacyModal();
 initLanguageSwitcher();
 applyLanguage(detectInitialLang(), { persist: false });
+initScrollReveal();
 
 if (isAlreadyRegistered()) {
   showConfirmation("returning");

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta name="description" id="meta-description" content="Be among the first to experience MaVie — label scanner, habit tracker, wellbeing journal. Beta includes all premium features." />
-  <meta name="theme-color" content="#FFF7F9" />
+  <meta name="theme-color" content="#FAF7F2" />
   <title id="doc-title">MaVie — Beta testing</title>
 
   <meta property="og:title" id="og-title" content="MaVie | Exclusive Beta Access" />
@@ -68,7 +68,7 @@
       </div>
     </header>
 
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title" data-reveal>
       <span class="badge" data-i18n="badge">Beta testing · a few spots left</span>
       <h1 id="hero-title" data-i18n="heroTitle">Be among the first to experience MaVie.</h1>
       <p class="hero-text" data-i18n="heroText">
@@ -81,19 +81,11 @@
       </p>
     </section>
 
-    <section class="signup" id="signup-section" aria-labelledby="signup-title">
+    <section class="signup" id="signup-section" aria-labelledby="signup-title" data-reveal>
       <div class="signup__panel">
         <div class="signup__intro">
           <p class="signup__eyebrow" data-i18n="signupEyebrow">Next step</p>
           <h2 id="signup-title" data-i18n="signupTitle">Join the beta</h2>
-
-          <div class="seats-live" role="status" aria-live="polite">
-            <span class="seats-live__dot" aria-hidden="true"></span>
-            <p class="seats-live__label">
-              <span class="seats-live__eyebrow" data-i18n="liveEyebrow">Updating live</span>
-              <strong id="seats-live-text">Secure one of the last spots.</strong>
-            </p>
-          </div>
         </div>
 
         <form
@@ -152,6 +144,14 @@
             Please confirm you agree to receive updates 🌸
           </p>
 
+          <div class="seats-live" role="status" aria-live="polite">
+            <span class="seats-live__dot" aria-hidden="true"></span>
+            <p class="seats-live__label">
+              <span class="seats-live__eyebrow" data-i18n="liveEyebrow">Updating live</span>
+              <strong id="seats-live-text">Secure one of the last spots.</strong>
+            </p>
+          </div>
+
           <button type="submit" class="btn btn--primary" id="submit-btn">
             <span class="btn__label" data-i18n="submitLabel">I want to join the beta 🌸</span>
             <span class="btn__loading" aria-hidden="true">
@@ -165,7 +165,7 @@
       </div>
     </section>
 
-    <section class="confirm" id="confirm-section" hidden aria-live="polite">
+    <section class="confirm" id="confirm-section" hidden aria-live="polite" data-reveal>
       <div class="confirm__inner">
         <p class="confirm__mark" aria-hidden="true">🌸</p>
         <h2 class="confirm__title" id="confirm-title" data-i18n="confirmFreshTitle">
@@ -198,7 +198,7 @@
       </div>
     </div>
 
-    <footer class="footer">
+    <footer class="footer" data-reveal>
       <p data-i18n="footerCopy">© MaVie. All rights reserved.</p>
       <button type="button" class="linkish footer__privacy" id="open-privacy-footer" data-open-privacy data-i18n="footerPrivacy">
         Privacy Policy
