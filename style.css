@@ -20,9 +20,20 @@
   --rose-soft: rgba(228, 154, 174, 0.45);
   --warn: #9e727b;
 
-  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  /* Display: Instrument Serif (Google Fonts, regular + italic available).
+     Body/UI: General Sans from Fontshare (Medium 500, Semibold 600, Bold 700).
+     Articulat CF (Displaay, commercial) was not found in this repo,
+     D:\MaVie_Projekti, Windows Fonts, user font folders, Adobe sync,
+     Downloads, Desktop, or Documents — do not pirate it.
+     General Sans is the closest legally webfont-loadable geometric neo-grotesk
+     with matching Medium / Demi-Bold / Bold roles.
+     Script: Alex Brush / --font-script — unchanged (marquee + mantras). */
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
   --font-script: "Alex Brush", cursive;
-  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "General Sans", system-ui, sans-serif;
+  --weight-body: 500;
+  --weight-label: 600;
+  --weight-button: 700;
 
   --radius: 0;
   --max: 480px;
@@ -50,7 +61,7 @@ body {
   min-height: 100dvh;
   min-height: 100vh;
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: var(--weight-body);
   font-size: 1rem;
   line-height: 1.75;
   color: var(--chocolate);
@@ -187,7 +198,7 @@ body {
 .lang-switch__menu li {
   padding: 0.55rem 0.85rem;
   font-size: 0.82rem;
-  font-weight: 400;
+  font-weight: var(--weight-body);
   color: var(--chocolate);
   cursor: pointer;
   transition: background-color 0.25s var(--ease);
@@ -229,7 +240,7 @@ body {
   display: inline-block;
   padding: 0;
   font-size: 0.66rem;
-  font-weight: 500;
+  font-weight: var(--weight-label);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--hot);
@@ -260,6 +271,8 @@ body {
   flex-shrink: 0;
   font-family: var(--font-script);
   font-size: clamp(1.25rem, 4vw, 1.55rem);
+  font-weight: 400;
+  font-style: normal;
   color: var(--blush);
   white-space: nowrap;
   line-height: 1.2;
@@ -289,17 +302,20 @@ body {
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 7.5vw, 2.55rem);
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.15;
   letter-spacing: -0.015em;
+  text-transform: none;
   max-width: 15ch;
   color: var(--chocolate);
 }
 
 .hero-text {
   font-size: 0.9rem;
-  font-weight: 300;
+  font-weight: var(--weight-body);
   line-height: 1.7;
+  text-transform: none;
   color: var(--chocolate-mute);
   max-width: 36ch;
 }
@@ -307,7 +323,7 @@ body {
 .steps {
   margin-top: 0.15rem;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: var(--weight-label);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--chocolate-mute);
@@ -318,7 +334,7 @@ body {
 .steps span {
   color: rgba(57, 36, 17, 0.35);
   margin-inline: 0.2rem;
-  font-weight: 500;
+  font-weight: var(--weight-label);
   letter-spacing: 0;
   text-transform: none;
 }
@@ -369,7 +385,7 @@ body {
 
 .seats-live__eyebrow {
   font-size: 0.58rem;
-  font-weight: 500;
+  font-weight: var(--weight-label);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--hot);
@@ -378,7 +394,8 @@ body {
 .seats-live__label strong {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: var(--weight-body);
+  text-transform: none;
   color: var(--chocolate);
   transition: opacity 0.28s ease, transform 0.28s ease;
 }
@@ -415,7 +432,7 @@ body {
 
 .signup__eyebrow {
   font-size: 0.64rem;
-  font-weight: 500;
+  font-weight: var(--weight-label);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--chocolate);
@@ -424,8 +441,10 @@ body {
 .signup__intro h2 {
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 5.5vw, 2.05rem);
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.2;
+  text-transform: none;
   color: var(--chocolate);
   max-width: 16ch;
 }
@@ -450,7 +469,7 @@ body {
 
 .field label {
   font-size: 0.66rem;
-  font-weight: 500;
+  font-weight: var(--weight-label);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--chocolate);
@@ -466,7 +485,7 @@ body {
   padding: 0.85rem 0;
   font-family: var(--font-body);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--weight-body);
   color: var(--chocolate);
   background: transparent;
   border: 0;
@@ -495,7 +514,7 @@ body {
 .field-error,
 .form-error {
   font-size: 0.84rem;
-  font-weight: 400;
+  font-weight: var(--weight-body);
   color: var(--warn);
   line-height: 1.5;
 }
@@ -521,8 +540,9 @@ body {
 
 .consent__text {
   font-size: 0.78rem;
-  font-weight: 300;
+  font-weight: var(--weight-body);
   line-height: 1.55;
+  text-transform: none;
   color: var(--chocolate-soft);
 }
 
@@ -563,7 +583,7 @@ body {
   padding: 1.15rem 1.35rem;
   font-family: var(--font-body);
   font-size: 0.76rem;
-  font-weight: 600;
+  font-weight: var(--weight-button);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-align: center;
@@ -709,16 +729,19 @@ body {
 .confirm__title {
   font-family: var(--font-display);
   font-size: clamp(1.65rem, 6vw, 2.1rem);
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.2;
+  text-transform: none;
   max-width: 16ch;
   color: var(--cream);
 }
 
 .confirm__text {
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: var(--weight-body);
   line-height: 1.75;
+  text-transform: none;
   max-width: 34ch;
   color: rgba(250, 247, 242, 0.72);
 }
@@ -751,7 +774,7 @@ body {
 
 .footer p {
   font-size: 0.68rem;
-  font-weight: 400;
+  font-weight: var(--weight-body);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--chocolate-soft);
@@ -765,7 +788,7 @@ body {
   background: none;
   color: var(--hot);
   font: inherit;
-  font-weight: 500;
+  font-weight: var(--weight-body);
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
@@ -778,7 +801,7 @@ body {
 
 .footer .footer__privacy {
   font-size: 0.5rem;
-  font-weight: 400;
+  font-weight: var(--weight-body);
   letter-spacing: 0.06em;
   text-transform: none;
   color: var(--chocolate);
@@ -858,7 +881,9 @@ body {
 .modal__body h2 {
   font-family: var(--font-display);
   font-size: 1.55rem;
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
   margin-bottom: 0.35rem;
   padding-right: 1.5rem;
   color: var(--chocolate);
@@ -866,6 +891,7 @@ body {
 
 .modal__body .modal__meta {
   font-size: 0.62rem;
+  font-weight: var(--weight-label);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--hot);
@@ -875,7 +901,9 @@ body {
 .modal__body h3 {
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
   margin: 1.25rem 0 0.45rem;
   color: var(--chocolate);
 }
@@ -883,8 +911,9 @@ body {
 .modal__body p,
 .modal__body li {
   font-size: 0.8rem;
-  font-weight: 300;
+  font-weight: var(--weight-body);
   line-height: 1.7;
+  text-transform: none;
   color: var(--chocolate-soft);
 }
 
